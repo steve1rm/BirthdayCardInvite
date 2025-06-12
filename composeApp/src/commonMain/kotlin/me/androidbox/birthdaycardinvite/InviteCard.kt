@@ -31,7 +31,7 @@ import org.jetbrains.compose.resources.painterResource
 @Composable
 fun InviteCard(modifier: Modifier = Modifier) {
     Surface(
-        modifier = modifier.height(480.dp).fillMaxWidth(),
+        modifier = modifier.height(if(getPlatform().isTablet()) 800.dp else 480.dp).fillMaxWidth(),
         shape = RoundedCornerShape(16.dp),
         color = Color(0xffFFF5EB)
     ) {
@@ -41,8 +41,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
         )
 
         Column(
-            modifier = Modifier.fillMaxSize(),
-
+            modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp),
         ) {
 
             Column(
@@ -53,7 +52,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
                 Text(
                     text = "You're invited!",
                     fontFamily = mail(),
-                    fontSize = 36.sp,
+                    fontSize = if(getPlatform().isTablet()) 60.sp else 36.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color(0xff113345)
                 )
@@ -63,7 +62,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
                 Text(
                     text = "Join us for a birthday bash \uD83C\uDF89",
                     fontFamily = mail(),
-                    fontSize = 21.sp,
+                    fontSize = if(getPlatform().isTablet()) 34.sp else 21.sp,
                     fontWeight = FontWeight.Medium,
                     color = Color(0xff113345)
                 )
@@ -76,7 +75,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
                             style = SpanStyle(
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = nunito(),
-                                fontSize = 21.sp,
+                                fontSize = if(getPlatform().isTablet()) 34.sp else 21.sp,
                                 color = Color(0xff113345)
                             )
                         ) {
@@ -87,7 +86,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
                             style = SpanStyle(
                                 fontWeight = FontWeight.Normal,
                                 fontFamily = nunito(),
-                                fontSize = 21.sp,
+                                fontSize = if(getPlatform().isTablet()) 34.sp else 21.sp,
                                 color = Color(0xff113345)
                             )
                         ) {
@@ -102,7 +101,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
                             style = SpanStyle(
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = nunito(),
-                                fontSize = 21.sp,
+                                fontSize = if(getPlatform().isTablet()) 34.sp else 21.sp,
                                 color = Color(0xff113345)
                             )
                         ) {
@@ -113,7 +112,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
                             style = SpanStyle(
                                 fontWeight = FontWeight.Normal,
                                 fontFamily = nunito(),
-                                fontSize = 21.sp,
+                                fontSize = if(getPlatform().isTablet()) 34.sp else 21.sp,
                                 color = Color(0xff113345)
                             )
                         ) {
@@ -128,7 +127,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
                             style = SpanStyle(
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = nunito(),
-                                fontSize = 21.sp,
+                                fontSize = if(getPlatform().isTablet()) 34.sp else 21.sp,
                                 color = Color(0xff113345)
                             )
                         ) {
@@ -139,7 +138,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
                             style = SpanStyle(
                                 fontWeight = FontWeight.Normal,
                                 fontFamily = nunito(),
-                                fontSize = 21.sp,
+                                fontSize = if(getPlatform().isTablet()) 34.sp else 21.sp,
                                 color = Color(0xff113345)
                             )
                         ) {
@@ -154,7 +153,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
                             style = SpanStyle(
                                 fontWeight = FontWeight.Bold,
                                 fontFamily = nunito(),
-                                fontSize = 21.sp,
+                                fontSize = if(getPlatform().isTablet()) 34.sp else 21.sp,
                                 color = Color(0xff113345),
                             )
                         ) {
@@ -165,14 +164,15 @@ fun InviteCard(modifier: Modifier = Modifier) {
                             style = SpanStyle(
                                 fontWeight = FontWeight.Normal,
                                 fontFamily = nunito(),
-                                fontSize = 21.sp,
+                                fontSize = if(getPlatform().isTablet()) 34.sp else 21.sp,
                                 color = Color(0xff113345)
                             )
                         ) {
                             append("Party Central, 123 Celebration Lane")
                         }
                     },
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    lineHeight = 40.sp
                 )
             }
         }
@@ -185,7 +185,7 @@ fun InviteCard(modifier: Modifier = Modifier) {
             textAlign = TextAlign.Center,
             text = "RSVP by June 9",
             fontFamily = nunito(),
-            fontSize = 16.sp,
+            fontSize = if(getPlatform().isTablet()) 26.sp else 16.sp,
             fontWeight = FontWeight.Normal,
             color = Color(0xff113345).copy(alpha = 0.80f)
         )

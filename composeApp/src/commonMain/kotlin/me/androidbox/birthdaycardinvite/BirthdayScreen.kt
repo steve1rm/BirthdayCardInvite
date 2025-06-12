@@ -18,7 +18,7 @@ fun BirthdayScreen(modifier: Modifier = Modifier) {
 
         Box(
             modifier = Modifier
-                .padding(horizontal = 16.dp)
+                .padding(horizontal = 90.dp)
                 .fillMaxSize(),
             contentAlignment = Alignment.Center
         ) {
